@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E128A16A1F38A81E00B3CB00 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E128A1691F38A81E00B3CB00 /* ImageViewController.m */; };
+		E171C7991F490EA4001BDF30 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E171C7981F490EA4001BDF30 /* Images.xcassets */; };
+		E171C7A21F4AF3AA001BDF30 /* UsersRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = E171C7A11F4AF3AA001BDF30 /* UsersRegistration.m */; };
+		E171C7A51F4AF3AB001BDF30 /* HistoryMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = E171C7A41F4AF3AB001BDF30 /* HistoryMessages.m */; };
+		E171C7A81F4AF3AB001BDF30 /* UsersBot.m in Sources */ = {isa = PBXBuildFile; fileRef = E171C7A71F4AF3AB001BDF30 /* UsersBot.m */; };
+		E176E8C91F354EAD0093E61D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E176E8C81F354EAD0093E61D /* CoreLocation.framework */; };
+		E17BCBA21F32F25800B6AAC0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17BCBA11F32F25800B6AAC0 /* AudioToolbox.framework */; };
+		E17BCBA71F32F54C00B6AAC0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17BCBA31F32F43300B6AAC0 /* AVFoundation.framework */; };
+		E18DBB541F4D033400AA7B46 /* MyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E18DBB531F4D033400AA7B46 /* MyCollectionViewCell.m */; };
+		E19E092B1F3B3771003CB0D4 /* Cordinatee.m in Sources */ = {isa = PBXBuildFile; fileRef = E19E092A1F3B3771003CB0D4 /* Cordinatee.m */; };
+		E19E092E1F3B3A7B003CB0D4 /* CordinateMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = E19E092D1F3B3A7B003CB0D4 /* CordinateMapView.m */; };
+		E19E09311F3B75F6003CB0D4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E19E092F1F3B75F6003CB0D4 /* Model.xcdatamodeld */; };
+		E19E09371F3B7CA1003CB0D4 /* RegistrationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E19E09361F3B7CA1003CB0D4 /* RegistrationVC.m */; };
+		E19E093A1F3B7D2B003CB0D4 /* ChatList.m in Sources */ = {isa = PBXBuildFile; fileRef = E19E09391F3B7D2B003CB0D4 /* ChatList.m */; };
+		E1E5E45E1F4B07D700307D71 /* button2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1E5E45D1F4B07D700307D71 /* button2.mp3 */; };
+		E1EC76FC1F34ABBB00FAA86D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1EC76FB1F34ABBB00FAA86D /* MapKit.framework */; };
+		E1EC76FF1F34AC7400FAA86D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EC76FE1F34AC7400FAA86D /* MapViewController.m */; };
+		E1F7B6621F317BFA00A464E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F7B6611F317BFA00A464E4 /* main.m */; };
+		E1F7B6651F317BFA00A464E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F7B6641F317BFA00A464E4 /* AppDelegate.m */; };
+		E1F7B6681F317BFA00A464E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F7B6671F317BFA00A464E4 /* ViewController.m */; };
+		E1F7B66B1F317BFA00A464E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F7B6691F317BFA00A464E4 /* Main.storyboard */; };
+		E1F7B6701F317BFA00A464E4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1F7B66E1F317BFA00A464E4 /* LaunchScreen.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E128A1681F38A81E00B3CB00 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		E128A1691F38A81E00B3CB00 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		E171C7981F490EA4001BDF30 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E171C7A01F4AF3AA001BDF30 /* UsersRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsersRegistration.h; path = baseSQL/UsersRegistration.h; sourceTree = "<group>"; };
+		E171C7A11F4AF3AA001BDF30 /* UsersRegistration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsersRegistration.m; path = baseSQL/UsersRegistration.m; sourceTree = "<group>"; };
+		E171C7A31F4AF3AB001BDF30 /* HistoryMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryMessages.h; path = baseSQL/HistoryMessages.h; sourceTree = "<group>"; };
+		E171C7A41F4AF3AB001BDF30 /* HistoryMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryMessages.m; path = baseSQL/HistoryMessages.m; sourceTree = "<group>"; };
+		E171C7A61F4AF3AB001BDF30 /* UsersBot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsersBot.h; path = baseSQL/UsersBot.h; sourceTree = "<group>"; };
+		E171C7A71F4AF3AB001BDF30 /* UsersBot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsersBot.m; path = baseSQL/UsersBot.m; sourceTree = "<group>"; };
+		E176E8C81F354EAD0093E61D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E17BCBA11F32F25800B6AAC0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E17BCBA31F32F43300B6AAC0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E18DBB521F4D033400AA7B46 /* MyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewCell.h; sourceTree = "<group>"; };
+		E18DBB531F4D033400AA7B46 /* MyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewCell.m; sourceTree = "<group>"; };
+		E19E09291F3B3771003CB0D4 /* Cordinatee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cordinatee.h; sourceTree = "<group>"; };
+		E19E092A1F3B3771003CB0D4 /* Cordinatee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cordinatee.m; sourceTree = "<group>"; };
+		E19E092C1F3B3A7B003CB0D4 /* CordinateMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CordinateMapView.h; sourceTree = "<group>"; };
+		E19E092D1F3B3A7B003CB0D4 /* CordinateMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CordinateMapView.m; sourceTree = "<group>"; };
+		E19E09301F3B75F6003CB0D4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E19E09351F3B7CA1003CB0D4 /* RegistrationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationVC.h; sourceTree = "<group>"; };
+		E19E09361F3B7CA1003CB0D4 /* RegistrationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationVC.m; sourceTree = "<group>"; };
+		E19E09381F3B7D2B003CB0D4 /* ChatList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatList.h; sourceTree = "<group>"; };
+		E19E09391F3B7D2B003CB0D4 /* ChatList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatList.m; sourceTree = "<group>"; };
+		E1E5E45D1F4B07D700307D71 /* button2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button2.mp3; sourceTree = "<group>"; };
+		E1EC76FB1F34ABBB00FAA86D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E1EC76FD1F34AC7400FAA86D /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		E1EC76FE1F34AC7400FAA86D /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		E1F7B65C1F317BFA00A464E4 /* Chat bot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat bot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1F7B6601F317BFA00A464E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1F7B6611F317BFA00A464E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E1F7B6631F317BFA00A464E4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E1F7B6641F317BFA00A464E4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E1F7B6661F317BFA00A464E4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E1F7B6671F317BFA00A464E4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E1F7B66A1F317BFA00A464E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E1F7B66F1F317BFA00A464E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E1F7B6591F317BFA00A464E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E176E8C91F354EAD0093E61D /* CoreLocation.framework in Frameworks */,
+				E17BCBA71F32F54C00B6AAC0 /* AVFoundation.framework in Frameworks */,
+				E1EC76FC1F34ABBB00FAA86D /* MapKit.framework in Frameworks */,
+				E17BCBA21F32F25800B6AAC0 /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E19E093B1F3B8197003CB0D4 /* SelectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				E19E092C1F3B3A7B003CB0D4 /* CordinateMapView.h */,
+				E19E092D1F3B3A7B003CB0D4 /* CordinateMapView.m */,
+				E128A1681F38A81E00B3CB00 /* ImageViewController.h */,
+				E128A1691F38A81E00B3CB00 /* ImageViewController.m */,
+			);
+			name = SelectionCell;
+			sourceTree = "<group>";
+		};
+		E19E093C1F3B81B9003CB0D4 /* MessageBot */ = {
+			isa = PBXGroup;
+			children = (
+				E18DBB521F4D033400AA7B46 /* MyCollectionViewCell.h */,
+				E18DBB531F4D033400AA7B46 /* MyCollectionViewCell.m */,
+				E1F7B6661F317BFA00A464E4 /* ViewController.h */,
+				E1F7B6671F317BFA00A464E4 /* ViewController.m */,
+				E19E093D1F3B81DE003CB0D4 /* OpenMap */,
+				E19E093B1F3B8197003CB0D4 /* SelectionCell */,
+			);
+			name = MessageBot;
+			sourceTree = "<group>";
+		};
+		E19E093D1F3B81DE003CB0D4 /* OpenMap */ = {
+			isa = PBXGroup;
+			children = (
+				E19E09291F3B3771003CB0D4 /* Cordinatee.h */,
+				E19E092A1F3B3771003CB0D4 /* Cordinatee.m */,
+				E1EC76FD1F34AC7400FAA86D /* MapViewController.h */,
+				E1EC76FE1F34AC7400FAA86D /* MapViewController.m */,
+			);
+			name = OpenMap;
+			sourceTree = "<group>";
+		};
+		E19E093E1F3B8213003CB0D4 /* RegistrationChatList */ = {
+			isa = PBXGroup;
+			children = (
+				E19E09381F3B7D2B003CB0D4 /* ChatList.h */,
+				E19E09391F3B7D2B003CB0D4 /* ChatList.m */,
+				E19E09351F3B7CA1003CB0D4 /* RegistrationVC.h */,
+				E19E09361F3B7CA1003CB0D4 /* RegistrationVC.m */,
+				E19E093C1F3B81B9003CB0D4 /* MessageBot */,
+			);
+			name = RegistrationChatList;
+			sourceTree = "<group>";
+		};
+		E19E09481F3B8F8E003CB0D4 /* baseSQL */ = {
+			isa = PBXGroup;
+			children = (
+				E171C7A01F4AF3AA001BDF30 /* UsersRegistration.h */,
+				E171C7A11F4AF3AA001BDF30 /* UsersRegistration.m */,
+				E171C7A61F4AF3AB001BDF30 /* UsersBot.h */,
+				E171C7A71F4AF3AB001BDF30 /* UsersBot.m */,
+				E171C7A31F4AF3AB001BDF30 /* HistoryMessages.h */,
+				E171C7A41F4AF3AB001BDF30 /* HistoryMessages.m */,
+			);
+			name = baseSQL;
+			sourceTree = "<group>";
+		};
+		E1F7B6531F317BFA00A464E4 = {
+			isa = PBXGroup;
+			children = (
+				E176E8C81F354EAD0093E61D /* CoreLocation.framework */,
+				E1EC76FB1F34ABBB00FAA86D /* MapKit.framework */,
+				E17BCBA31F32F43300B6AAC0 /* AVFoundation.framework */,
+				E17BCBA11F32F25800B6AAC0 /* AudioToolbox.framework */,
+				E1F7B65E1F317BFA00A464E4 /* TestChat2 */,
+				E1F7B65D1F317BFA00A464E4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E1F7B65D1F317BFA00A464E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1F7B65C1F317BFA00A464E4 /* Chat bot.app */,
+			);
+			name = Products;
+			path = TestChat2Tests;
+			sourceTree = "<group>";
+		};
+		E1F7B65E1F317BFA00A464E4 /* TestChat2 */ = {
+			isa = PBXGroup;
+			children = (
+				E19E09481F3B8F8E003CB0D4 /* baseSQL */,
+				E171C7981F490EA4001BDF30 /* Images.xcassets */,
+				E19E092F1F3B75F6003CB0D4 /* Model.xcdatamodeld */,
+				E1F7B6691F317BFA00A464E4 /* Main.storyboard */,
+				E1E5E45D1F4B07D700307D71 /* button2.mp3 */,
+				E1F7B6631F317BFA00A464E4 /* AppDelegate.h */,
+				E1F7B6641F317BFA00A464E4 /* AppDelegate.m */,
+				E19E093E1F3B8213003CB0D4 /* RegistrationChatList */,
+				E1F7B66E1F317BFA00A464E4 /* LaunchScreen.xib */,
+				E1F7B65F1F317BFA00A464E4 /* Supporting Files */,
+			);
+			name = TestChat2;
+			path = "Chat bot";
+			sourceTree = "<group>";
+		};
+		E1F7B65F1F317BFA00A464E4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E1F7B6601F317BFA00A464E4 /* Info.plist */,
+				E1F7B6611F317BFA00A464E4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E1F7B65B1F317BFA00A464E4 /* Chat bot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1F7B67F1F317BFA00A464E4 /* Build configuration list for PBXNativeTarget "Chat bot" */;
+			buildPhases = (
+				E1F7B6581F317BFA00A464E4 /* Sources */,
+				E1F7B6591F317BFA00A464E4 /* Frameworks */,
+				E1F7B65A1F317BFA00A464E4 /* Resources */,
+				E17BCB9C1F32B6DD00B6AAC0 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Chat bot";
+			productName = TestChat2;
+			productReference = E1F7B65C1F317BFA00A464E4 /* Chat bot.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1F7B6541F317BFA00A464E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "";
+				TargetAttributes = {
+					E1F7B65B1F317BFA00A464E4 = {
+						CreatedOnToolsVersion = 6.0.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = E1F7B6571F317BFA00A464E4 /* Build configuration list for PBXProject "Chat bot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E1F7B6531F317BFA00A464E4;
+			productRefGroup = E1F7B65D1F317BFA00A464E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1F7B65B1F317BFA00A464E4 /* Chat bot */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1F7B65A1F317BFA00A464E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E171C7991F490EA4001BDF30 /* Images.xcassets in Resources */,
+				E1F7B66B1F317BFA00A464E4 /* Main.storyboard in Resources */,
+				E1F7B6701F317BFA00A464E4 /* LaunchScreen.xib in Resources */,
+				E1E5E45E1F4B07D700307D71 /* button2.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E17BCB9C1F32B6DD00B6AAC0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Applications/Xcode.app/Contents/Developer/iphoneentitlements401/gen_entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"Sound Blaster\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1F7B6581F317BFA00A464E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E19E09371F3B7CA1003CB0D4 /* RegistrationVC.m in Sources */,
+				E128A16A1F38A81E00B3CB00 /* ImageViewController.m in Sources */,
+				E19E092B1F3B3771003CB0D4 /* Cordinatee.m in Sources */,
+				E19E093A1F3B7D2B003CB0D4 /* ChatList.m in Sources */,
+				E1F7B6681F317BFA00A464E4 /* ViewController.m in Sources */,
+				E19E09311F3B75F6003CB0D4 /* Model.xcdatamodeld in Sources */,
+				E1F7B6651F317BFA00A464E4 /* AppDelegate.m in Sources */,
+				E1F7B6621F317BFA00A464E4 /* main.m in Sources */,
+				E1EC76FF1F34AC7400FAA86D /* MapViewController.m in Sources */,
+				E171C7A21F4AF3AA001BDF30 /* UsersRegistration.m in Sources */,
+				E171C7A51F4AF3AB001BDF30 /* HistoryMessages.m in Sources */,
+				E19E092E1F3B3A7B003CB0D4 /* CordinateMapView.m in Sources */,
+				E18DBB541F4D033400AA7B46 /* MyCollectionViewCell.m in Sources */,
+				E171C7A81F4AF3AB001BDF30 /* UsersBot.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E1F7B6691F317BFA00A464E4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1F7B66A1F317BFA00A464E4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E1F7B66E1F317BFA00A464E4 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1F7B66F1F317BFA00A464E4 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E1F7B67D1F317BFA00A464E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E1F7B67E1F317BFA00A464E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E1F7B6801F317BFA00A464E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Chat bot/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "Chat bot";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		E1F7B6811F317BFA00A464E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Chat bot/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "Chat bot";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E1F7B6571F317BFA00A464E4 /* Build configuration list for PBXProject "Chat bot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1F7B67D1F317BFA00A464E4 /* Debug */,
+				E1F7B67E1F317BFA00A464E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1F7B67F1F317BFA00A464E4 /* Build configuration list for PBXNativeTarget "Chat bot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1F7B6801F317BFA00A464E4 /* Debug */,
+				E1F7B6811F317BFA00A464E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E19E092F1F3B75F6003CB0D4 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E19E09301F3B75F6003CB0D4 /* Model.xcdatamodel */,
+			);
+			currentVersion = E19E09301F3B75F6003CB0D4 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E1F7B6541F317BFA00A464E4 /* Project object */;
+}
