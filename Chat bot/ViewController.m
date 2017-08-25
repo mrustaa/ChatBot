@@ -635,9 +635,9 @@ UIImagePickerControllerDelegate     >
     self.title = [NSString stringWithFormat:@"%@ %@", _userBot.name , _userBot.password ] ;
 
     [self self_view_frame];
-   // [self create_background_image:@"background.jpg"];   // установка фонового изображения
+    [self create_background_image:@"background.jpg"];   // установка фонового изображения
    // [self create_collectionView];
-   // [self create_tableView: CGRectMake(0, 0 +65, screenWidth, screenHeight - 110 ) color:[UIColor clearColor] ];
+    [self create_tableView: CGRectMake(0, 0 +65, screenWidth, screenHeight - 110 ) color:[UIColor clearColor] ];
     
     [self create_gesture_hide_keyboard]; // создание прикосновения
     [self create_field_textInput];  // установка поля для ввода
