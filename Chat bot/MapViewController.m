@@ -1,10 +1,5 @@
-//
-//  MapViewController.m
-//  TestChat2
-//
-//  Created by robert on 04.08.17.
-//  Copyright (c) 2017 robert. All rights reserved.
-//
+
+
 
 #import "MapViewController.h"
 
@@ -12,6 +7,8 @@
 #import <MapKit/MKPinAnnotationView.h>
 
 #import "Cordinatee.h"
+
+#import "SendSaveMsgInData.h"
 
 @implementation SPAnnotation
 @end
@@ -33,7 +30,8 @@
 
 @property (strong, nonatomic)               CLLocation          *location;
 @property (strong, nonatomic)               CLLocationManager   *locationManager;
-// Нам нужно установить наше местоположение self.location.​	 Как мы сможем это сделать?		 Нам необходим менеджера местоположения locationManager
+// Нам нужно установить наше местоположение self.location.​	 Как мы сможем это сделать?
+// Нам необходим менеджера местоположения locationManager
 @property (strong, nonatomic)               CLGeocoder          * myGeocoder;
 @property (strong, nonatomic)               CLPlacemark         * placemark;
 
@@ -116,12 +114,7 @@
                                                       forControlEvents:UIControlEventTouchUpInside];
                           [ _view1 addSubview: buttonSymbol2 ];
     [ self.view addSubview: _view1 ];
-    /*
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-                     UIImage *image = [[UIImage imageNamed:@"image_name"] imageWithRenderingMode: UIImageRenderingModeAlwaysTemplate];
-             [button setImage:image forState:UIControlStateNormal];
-              button.tintColor = [UIColor redColor];
-    */
+
     // ____________________________________________________________________________________________________
     
     UIView *vieww  = [[UIView alloc] initWithFrame: CGRectMake(17, 125, 46, 46	)];
@@ -162,15 +155,8 @@
   
     _mapView.showsUserLocation = 1;
     
-  //  [_locationManager startMonitoringSignificantLocationChanges];
     [_locationManager startUpdatingLocation]; 	// старт обновления локации 	= результат в методе делегата
-    // NSLog(@" %@ ",_locationManager);
-    
-    
-    // [_mapView setRegion: MKCoordinateRegionMake( CLLocationCoordinate2DMake( 55.537241 ,37.513494) , MKCoordinateSpanMake(0.1, 0.1) ) animated: true];
 
-
-    //  [_locationManager  stopUpdatingLocation];  	// стоп обновления
     
     // программный жест - долгое нажатие - и метод запускаемый
       UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget: self   action: @selector(handleLongPress:)];
@@ -216,12 +202,13 @@
             
            
             
-            [ ((ViewController *) ((UINavigationController *)self.presentingViewController).topViewController) geoPhoto: image
-                                                                                                              cordinate: cordinatee ];
+            [ ((Chat *) ((UINavigationController *)self.presentingViewController).topViewController)
+             sendSaveMsgUser: @"user1" type:@"geo" message1:image message2: cordinatee ];
+
             
             
-            [self.presentingViewController dismissViewControllerAnimated: YES// self.presentingViewController - контроллер который представил этот класс
-                                                              completion: NULL ];		// 	dismissViewControllerAnimated 	удаляет с экрана этот класс
+            [self.presentingViewController dismissViewControllerAnimated: YES
+                                                              completion: NULL ]; 
             
         });
     }];
@@ -260,13 +247,14 @@
             cordinatee.latitude  = _coordinate2.latitude ;
             cordinatee.longitude = _coordinate2.longitude  ;
             
-            [ ((ViewController *) ((UINavigationController *)self.presentingViewController).topViewController) geoPhoto: image
-                                                                                                              cordinate: cordinatee ];
+            
+            
+            [ ((Chat *) ((UINavigationController *)self.presentingViewController).topViewController)
+             sendSaveMsgUser: @"user1" type:@"geo" message1:image message2: cordinatee ];
             
             
             
-            [self.presentingViewController dismissViewControllerAnimated: YES// self.presentingViewController - контроллер который представил этот класс
-                                                              completion: NULL ];		// 	dismissViewControllerAnimated 	удаляет с экрана этот класс
+            [self.presentingViewController dismissViewControllerAnimated: YES  completion: NULL ];
             
         });
     }];
@@ -311,39 +299,7 @@
             }];
         
         }
-        
-    // _________________________________________________________________________________________________________
-    /*
-        CLLocationCoordinate2D coordinate = ((SPAnnotation *)annotation).coordinate;
-        
-        NSString *latitude  = [ NSString stringWithFormat: @"%.12f", coordinate.latitude  ];
-        NSString *longitude = [ NSString stringWithFormat: @"%.12f", coordinate.longitude ];
-        
-        CLLocation *location1 = [ [CLLocation alloc] initWithLatitude: latitude. floatValue
-                                                            longitude: longitude.floatValue ];
-        
-        self.myGeocoder = [[CLGeocoder alloc] init];
-        NSLog(@" ! " );
-        [self.myGeocoder reverseGeocodeLocation: location1
-                              completionHandler: ^(NSArray *placemarks, NSError *error) {
-                                  if (error == nil && [placemarks count] > 0) {
-                                      CLPlacemark *k = [placemarks lastObject];
-                                    //  NSString * vendorLocation = [NSString stringWithFormat:@"%@ %@", _placemark.locality, _placemark.subLocality];
-                                      NSLog(@"%@", k.name  );
-                                      NSLog(@"%@", k.thoroughfare);
-                                      NSLog(@"%@", k.subThoroughfare  );
-                                      NSLog(@"%@", k.locality  );
-                                      NSLog(@"%@", k.subLocality );
-                                      NSLog(@"%@", k.administrativeArea );
-                                      NSLog(@"%@", k.subAdministrativeArea );
-                                      NSLog(@"%@", k.postalCode );
-                                      NSLog(@"%@", k.ISOcountryCode );
-                                      NSLog(@"%@", k.country );
-                                      NSLog(@"%@", k.inlandWater );
-                                      NSLog(@"___________________________");
-                                  }
-                              }];
-         */
+
     // _________________________________________________________________________________________________________
         
         SPAnnotation* i = annotation;
@@ -351,11 +307,13 @@
         
     MKAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier: @"an"];
     
-    MKPinAnnotationView *vieww = [[MKPinAnnotationView alloc] initWithAnnotation: annotation    reuseIdentifier: @"an"];
-                         vieww.pinColor = MKPinAnnotationColorGreen; // зеленая булавка
-                         vieww.animatesDrop = 1;                     // анимация падения булавки , каждой следующей
-                         vieww.annotation = annotation;
-                  view = vieww;
+    MKPinAnnotationView *
+        vieww = [[MKPinAnnotationView alloc] initWithAnnotation: annotation    reuseIdentifier: @"an"];
+        vieww.pinTintColor = [UIColor greenColor]; // зеленая булавка
+        vieww.animatesDrop = 1;                     // анимация падения булавки , каждой следующей
+        vieww.annotation = annotation;
+        
+        view = vieww;
         
     }
     return  view;
@@ -440,8 +398,8 @@
 // отмена
 - (IBAction)endEditing:(UIBarButtonItem *)sender {
     
-    [self.presentingViewController dismissViewControllerAnimated: YES// self.presentingViewController - контроллер который представил этот класс
-                                                      completion: NULL ];		// 	dismissViewControllerAnimated 	удаляет с экрана этот класс
+    [self.presentingViewController dismissViewControllerAnimated: YES
+                                                      completion: NULL ];
 
 }
 
@@ -476,8 +434,6 @@
                animated: true];
     }
 
-    //NSLog(@"%f",_location.altitude); // высота над уровнем моря
-    //NSLog(@"%f",_location.speed);    // скорость
     
     
 }

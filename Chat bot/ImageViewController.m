@@ -1,18 +1,12 @@
 
+
+
+
+
 #import "ImageViewController.h"
-//#import "URLViewController.h"
-#import <AssetsLibrary/AssetsLibrary.h>
 
-@interface ImageViewController () <UIScrollViewDelegate, UISplitViewControllerDelegate>
-{
-    CGFloat screenWidth  ;
-    CGFloat screenHeight ;
-}
-@property(nonatomic, strong)          UIImageView     * imageView;
-@property(strong, nonatomic) IBOutlet UIScrollView    * scrollView;
-@property(nonatomic, strong)          UIImage         * image;
-
-@end
+#import <Photos/PHAsset.h>
+#import <Photos/PHImageManager.h>
 
 
 
@@ -22,98 +16,147 @@
     [super viewDidLoad];
     
     
+    [self.view addGestureRecognizer:
+     [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(endEditing:)] ];
+    
+    self.imageView  = [[UIImageView  alloc] init];
+    self.imageView.frame = self.view.frame;
+   // self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    
+    self.scrollView = [[UIScrollView alloc] initWithFrame: self.view.frame];
+    self.scrollView.delegate = self;
+    self.scrollView.minimumZoomScale =  1.0;
+    self.scrollView.maximumZoomScale = 10.0 ;
+    // self.scrollView.bouncesZoom = 0;
+
+    
+    //[self createNavigationController];
+    
+    [self.view addSubview: self.imageView];
+    
+    [self findLargeImage];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+
+    // ширина изображения
+    int width2 = (self.view.frame.size.width);
+    
+    // выясняем высоту изображения
+    int height2 =
+    (self.imageView.frame.size.height / ( self.imageView.frame.size.width / width2));
+    
+    int yPosition2 = (self.view.frame.size.height / 2) - (height2 / 2) ;
+    
+    [UIView animateWithDuration: 0.3
+                     animations: ^(void) {
+                         
+                         self.imageView.frame =CGRectMake(0,yPosition2,width2,height2);
+                         
+                     }
+                     completion: ^(BOOL finished) { } ];
+    
+    [self.scrollView addSubview: self.imageView];
+    [self.view       addSubview: self.scrollView];
+    
+}
+- (void)viewWillDisappear:(BOOL)animated {
     
     
-    CGRect screenBound = [[UIScreen mainScreen] bounds];
-    CGSize screenSize = screenBound.size;
-    screenWidth  = screenSize.width;
-    screenHeight = screenSize.height;
+    // ширина изображения
+    int width = (self.view.frame.size.width - 118);
     
-    _scrollView = [[UIScrollView alloc] initWithFrame: CGRectMake(0, 64, screenWidth, screenHeight)];
-    [self.view addSubview:_scrollView];
+    // выясняем высоту изображения
+    int height =
+    self.imageView.image.size.height / ( self.imageView.image.size.width / ( self.view.frame.size.width - 118 ));
+    
+    // переместить  на 70 пикселей от правого края
+    int plus70 = self.view.frame.size.width - (self.view.frame.size.width - 118) -70;
+    
+    [UIView animateWithDuration: 0.2
+                     animations: ^(void) {
+                         self.imageView.frame =
+                         CGRectMake ( plus70 , self.floatImageHeight.integerValue +5 ,  width , height );
+                     }
+                     completion: ^(BOOL finished) { } ];
+
+}
+
+
+// получение изображения из библиотеки
+-(void)findLargeImage {
+
+    
+    
+        
+    PHFetchResult *result = [PHAsset fetchAssetsWithALAssetURLs: @[self.imageURL] options:nil];
+    PHAsset *imageAsset = result.firstObject;
+
+   // NSLog(@"%d %d",(int)imageAsset.pixelWidth,(int) imageAsset.pixelHeight);
+    
+    CGSize cellSize = CGSizeMake(imageAsset.pixelWidth, imageAsset.pixelHeight);
+    
+    PHImageRequestOptions *
+    options = [PHImageRequestOptions new];
+    options.synchronous = YES;
+    
+    [[PHImageManager defaultManager] requestImageForAsset: imageAsset targetSize:cellSize contentMode:PHImageContentModeAspectFill options:options resultHandler: ^(UIImage * _Nullable result, NSDictionary * _Nullable info)
+     {
+         
+         // NSLog(@"- %f %f",result.size.width,result.size.height);
+         
+         self.imageView.image = result;
+         
+         // ширина изображения
+         int width = (self.view.frame.size.width - 118);
+         
+         // выясняем высоту изображения
+         int height =
+         self.imageView.image.size.height / ( self.imageView.image.size.width / ( self.view.frame.size.width - 118 ));
+         
+         // переместить  на 70 пикселей от правого края
+         int plus70 = self.view.frame.size.width - (self.view.frame.size.width - 118) -70;
+         
+         
+         self.imageView.frame =
+         CGRectMake ( plus70 , self.floatImageHeight.integerValue +5 ,  width , height );
+         
+     }];
+   
+}
+
+
+- (void)createNavigationController {
+    
     // делаем Navigation Контроллер
-    UIView *view1 = [[UIView alloc] initWithFrame: CGRectMake( 0, 0, screenWidth, 29 )];
-    view1.backgroundColor =
+    UIView *
+    view = [[UIView alloc] initWithFrame: CGRectMake( 0, 0, self.view.frame.size.width, 29 )];
+    view.backgroundColor =
     [UIColor colorWithRed: 247.0/255.0 green: 247.0/255.0 blue: 247.0/255.0 alpha: 1.0];
     
-    /*
-    UINavigationBar *_bar2 = [UINavigationBar new];
-    _bar2.frame = CGRectMake( 0, 64, screenWidth, 44 );
-    [ self.view addSubview: _bar2 ];*/
     
-    UINavigationBar *_bar3 = [UINavigationBar new];
-    _bar3.frame = CGRectMake( 0, 20, screenWidth, 44 );
+    UINavigationBar *
+    bar = [UINavigationBar new];
+    bar.frame = CGRectMake( 0, 20, self.view.frame.size.width, 44 );
     
     
     
-    UINavigationItem *_item = [[UINavigationItem alloc] initWithTitle: @""];
+    UINavigationItem * item = [[UINavigationItem alloc] initWithTitle: @""];
     
     UIBarButtonItem  * btn  = [[UIBarButtonItem alloc]  initWithTitle: @"Отмена"
                                                                 style: UIBarButtonItemStylePlain
                                                                target: self
                                                                action: @selector( endEditing: )];
-    _item.leftBarButtonItem = btn;
+    item.leftBarButtonItem = btn;
     self.navigationItem.leftBarButtonItem = btn;
-    [_bar3 pushNavigationItem:_item animated:NO];
+    [bar pushNavigationItem: item animated:NO];
     
-    [ self.view addSubview: view1 ];
-    [ self.view addSubview: _bar3 ];
+    [ self.view addSubview: view ];
+    [ self.view addSubview: bar ];
     
-
-    _scrollView.minimumZoomScale =  0.1;
-    _scrollView.maximumZoomScale = 10.0 ;
-    _scrollView.delegate = self;
-
-
-    _imageView = [ [UIImageView alloc] init];
-    
-    
-    [self findLargeImage];
-}
-
-
-
--(void)findLargeImage
-{
-
-    
-    //
-    ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset)
-    {
-        ALAssetRepresentation *rep = [myasset defaultRepresentation];
-        CGImageRef iref = [rep fullResolutionImage];
-        if (iref) {
-            
-            
-            UIImage *largeimage = [UIImage imageWithCGImage:iref scale:[rep scale] orientation:[rep orientation]];
-            
-            
-
-            
-             _imageView.image = largeimage;
-             _imageView.frame = CGRectMake(0, 0, largeimage.size.width , largeimage.size.height );
-
-           [_scrollView addSubview: self.imageView];
-            
-            [_scrollView zoomToRect: _imageView.frame animated: 0 ];
-        }
-    };
-    
-    //
-    ALAssetsLibraryAccessFailureBlock failureblock  = ^(NSError *myerror)  {  NSLog(@" Не могу получить фото - %@",[myerror localizedDescription]);  };
-    
-    if(_imageURL /*&& [_imageURL length]*/ )
-    {
-        //[largeimage release];
-        NSURL *asseturl = _imageURL; // [NSURL URLWithString:_imageURL];
-        
-        // NSLog(@"%@",asseturl);
-        
-        ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init] ;
-        [assetslibrary assetForURL:asseturl
-                       resultBlock:resultblock
-                      failureBlock:failureblock];
-    }
 }
 
 
@@ -121,8 +164,7 @@
 
 - (IBAction)endEditing:(UIBarButtonItem *)sender {
     
-    [self.presentingViewController dismissViewControllerAnimated: YES// self.presentingViewController - контроллер который представил этот класс
-                                                      completion: NULL ];		// 	dismissViewControllerAnimated 	удаляет с экрана этот класс
+    [self.presentingViewController dismissViewControllerAnimated: YES  completion: NULL ];
     
 }
 

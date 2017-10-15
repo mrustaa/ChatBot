@@ -102,7 +102,7 @@
     //NSLog(@"тут");
     MKAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier: @"an"];
     
-    MKPinAnnotationView *vieww = [[MKPinAnnotationView alloc] initWithAnnotation: annotation    reuseIdentifier: @"an"];
+    MKPinAnnotationView *vieww = [[MKPinAnnotationView alloc] initWithAnnotation: annotation reuseIdentifier: @"an"];
     vieww.pinColor = MKPinAnnotationColorGreen; // зеленая булавка
     vieww.animatesDrop = 1;                     // анимация падения булавки , каждой следующей
     vieww.annotation = annotation;

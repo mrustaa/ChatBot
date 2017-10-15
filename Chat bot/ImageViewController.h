@@ -3,11 +3,17 @@
 
 
 #import <UIKit/UIKit.h>
-//#import "MapVkViewController.h"
+#import "ImageViewController.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface ImageViewController : UIViewController
-@property(nonatomic, strong) NSURL *imageURL;
+<UIScrollViewDelegate, UISplitViewControllerDelegate>
 
-//@property(nonatomic, strong)    VkUserAnnotation *vkuser;
+@property(nonatomic, strong) NSURL      *imageURL;
+@property(nonatomic, strong) NSNumber * floatImageHeight;
+
+@property(nonatomic, strong)  UIImageView     * imageView;
+@property(strong, nonatomic)  UIScrollView    * scrollView;
+
 @end
 

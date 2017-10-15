@@ -1,8 +1,12 @@
 
+
+
 #import "CoreLocation/CoreLocation.h"
 #import <MapKit/MapKit.h>
 
-#import "ViewController.h"
+#import "Chat.h"
+
+
 
 @interface SPAnnotation : NSObject <MKAnnotation>
 @property (nonatomic) CLLocationCoordinate2D coordinate;

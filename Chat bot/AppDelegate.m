@@ -1,13 +1,10 @@
 
-#import <CoreData/CoreData.h>
+
 
 
 #import "AppDelegate.h"
 
 
-@interface AppDelegate ()
-
-@end
 
 @implementation AppDelegate
 
@@ -15,11 +12,11 @@
 - (BOOL)            application:(UIApplication *)application
   didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    NSManagedObjectContext    *DatabaseContext = [self createMainQueueManagedObjectContext];
+    _persistentContainer = [self persistentContainer];
     
-    //NSLog(@"%@",DatabaseContext);
+    NSManagedObjectContext * databaseContext = _persistentContainer.viewContext ;
     
-    NSDictionary *userInfo = DatabaseContext ? @{ @"Context" : DatabaseContext } : nil;
+    NSDictionary *userInfo = databaseContext ? @{ @"Context" : databaseContext } : nil;
     [[NSNotificationCenter defaultCenter] postNotificationName: @"DatabaseNotification"
                                                         object: self
                                                       userInfo: userInfo];
@@ -27,40 +24,48 @@
     return YES;
 }
 
-- (NSManagedObjectContext *)createMainQueueManagedObjectContext{
-    
-    
-    // адресс Бд	Предположим, вы хотит найти путь к каталогу Documents (Документы) вашего приложения. Вот как просто это делается:
-    NSArray *urlll = [[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
-                                                            inDomains:NSUserDomainMask];///создает путь к файлам, директории приложения,
-    NSURL *urll = [urlll lastObject];//он возвращает массив - но там всего лишь 1 элемент. это адресс
-    urll = [urll URLByAppendingPathComponent:@"MOC.sqlite"]; //добавление окончание, к этому адрессу
-    
-    
-    
-    // создать кординатор
-    NSPersistentStoreCoordinator *per  =
-    [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: //  иницилизировать схему Базы Данных    Model.xcdatamodeld
-     [[NSManagedObjectModel alloc] initWithContentsOfURL:	// создать схему Базы Данных  	инициализоровать
-      [[NSBundle mainBundle] URLForResource:@"Model" withExtension:@"momd"]] ]; // по этому адрессу       нашу модель схемы
-    
-    
-    // Добавляет новое персистентное хранилище указанного типа в данном расположении и возвращает новое хранилище.
-    [per addPersistentStoreWithType: NSSQLiteStoreType
-                      configuration: nil
-                                URL: urll   // адресс Бд
-                            options: nil
-                              error: nil];
-    
-    NSManagedObjectContext *ma = nil;
-    if (per != nil) {
-        ma = [[NSManagedObjectContext alloc] initWithConcurrencyType: NSMainQueueConcurrencyType]; // создать контекст - тип: основной поток
-        [ma setPersistentStoreCoordinator: per];	// к контексту добавить кординатор
-    }
-    return ma;
-    
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+
+    [self saveContext];
 }
 
+
+#pragma mark - Core Data stack
+
+@synthesize persistentContainer = _persistentContainer;
+
+- (NSPersistentContainer *)persistentContainer {
+
+    @synchronized (self) {
+        
+        if (_persistentContainer == nil) {
+            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"Model"];
+            [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
+                if (error != nil) {
+
+                    NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+                    abort();
+                }
+            }];
+        }
+    }
+    
+    return _persistentContainer;
+}
+
+#pragma mark - Core Data Saving support
+
+- (void)saveContext {
+    
+    NSManagedObjectContext *context = self.persistentContainer.viewContext;
+    NSError *error = nil;
+    if ([context hasChanges] && ![context save:&error]) {
+
+        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+        abort();
+    }
+}
 
 
 @end

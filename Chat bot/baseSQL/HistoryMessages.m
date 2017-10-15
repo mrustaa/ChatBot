@@ -1,13 +1,10 @@
-//
-//  HistoryMessages.m
-//  Chat2
-//
-//  Created by robert on 21.08.17.
-//
-//
+
+
+
 
 #import "HistoryMessages.h"
 #import "UsersBot.h"
+
 
 
 @implementation HistoryMessages
